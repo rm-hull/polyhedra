@@ -2,6 +2,8 @@
 gyroelongated triangular cupola (J22)
 :number
 66
+:comment
+Modified by George W. Hart, Jan. 1996 to fix solid
 :symbol
 	@Q sub 3 @
 :sfaces
@@ -25,7 +27,7 @@ gyroelongated triangular cupola (J22)
 4 7 10 4 2
 3 7 2 1
 :solid
-14 6
+20 6
 6 33 27 23 26 32 36
 3 22 23 24
 3 24 23 27
@@ -40,6 +42,12 @@ gyroelongated triangular cupola (J22)
 3 29 34 28
 4 25 29 28 22
 3 25 22 24
+3 35 36 34
+3 34 36 32
+3 34 32 28
+3 28 32 26
+3 28 26 22
+3 22 26 23
 :hinges
 13
 1 1 2 0 2.5346001497151262

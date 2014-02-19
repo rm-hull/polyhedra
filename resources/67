@@ -2,6 +2,8 @@
 gyroelongated square cupola (J23)
 :number
 67
+:comment
+Modified by George W. Hart, Jan. 1996 to fix solid
 :symbol
 	@Q sub 4 @
 :sfaces
@@ -29,7 +31,7 @@ gyroelongated square cupola (J23)
 4 12 13 6 5
 3 12 5 10
 :solid
-18 8
+26 8
 8 40 34 30 33 39 45 49 46
 3 31 30 32
 3 32 30 34
@@ -48,6 +50,14 @@ gyroelongated square cupola (J23)
 3 36 35 31
 4 37 36 31 32
 3 37 32 38
+3 48 49 47
+3 49 45 47
+3 47 45 41
+3 41 45 39
+3 41 39 35
+3 35 39 33
+3 35 33 31
+3 31 33 30
 :hinges
 17
 1 1 2 0 2.6871505056370706
