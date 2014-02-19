@@ -1,0 +1,74 @@
+#VRML V1.0 ascii
+DEF Title Info {
+  string "undefined.   Output from prism-maker script."
+  }
+DEF SceneInfo Info {
+  string "(c) George W. Hart,  1997,   george@li.net"
+  string "Dept. Computer Science, Hofstra University"
+  string "Freely distributable for noncommercial purposes"
+  }
+DEF BackgroundColor Info {string "0.2 0.5 0.9"}       # blue sky
+DEF Viewer Info {string "examiner"}                   # initial mode
+ShapeHints {
+  vertexOrdering UNKNOWN_ORDERING
+  creaseAngle 0
+  }
+DirectionalLight {direction -.5 -1  1 intensity 0.75} # built-in lights
+DirectionalLight {direction  .5  1 -1 intensity 0.75}
+DEF Cameras Switch {whichChild 0
+  DEF General PerspectiveCamera {position 6 0 6  orientation 0 1 0 0.78}
+  DEF Face    PerspectiveCamera {position 0 -6 0 orientation 1 0 0 1.57}
+  DEF Top     PerspectiveCamera {position 0 0 8 }
+  DEF Edge    PerspectiveCamera {position 7 0 0  orientation 0 1 0 1.57}
+  DEF Inside  PerspectiveCamera {position 0 0 0  orientation 1 0 0 -1.57}
+  DEF Far     PerspectiveCamera {position -25 0 25 orientation 0 1 0 -0.78}
+  }
+Separator {
+  Coordinate3 {
+        point [
+        1 0 .5877852274411223,
+        .3090170528039763 .9510564973104093 .5877852274411223,
+        -.809016922152689 .587785351697871 .5877852274411223,
+        -.8090171027083121 -.5877851031843597 .5877852274411223,
+        .3090167606588202 -.9510565922340949 .5877852274411223,
+        1 0 -.5877852274411223,
+        .3090170528039763 .9510564973104093 -.5877852274411223,
+        -.809016922152689 .587785351697871 -.5877852274411223,
+        -.8090171027083121 -.5877851031843597 -.5877852274411223,
+        .3090167606588202 -.9510565922340949 -.5877852274411223,
+        ]
+        }
+  Material {
+    diffuseColor 0.8 0.7 0.5     # yellowish top and bottom
+    }
+  IndexedFaceSet {
+    coordIndex [
+        0,1,2,3,4,-1,
+        9,8,7,6,5,-1,
+        ]
+        }
+  Material {
+    diffuseColor 0.3 0.5 0.9     # blue squares
+    }
+  IndexedFaceSet {
+    coordIndex [
+        0,1,6,5,-1,
+        1,2,7,6,-1,
+        2,3,8,7,-1,
+        3,4,9,8,-1,
+        4,0,5,9,-1,
+        ]
+        }
+  Material {
+    diffuseColor 0 0 0      # black edges
+    }
+  IndexedLineSet {
+    coordIndex [
+        0,1,6,5,-1,
+        1,2,7,6,-1,
+        2,3,8,7,-1,
+        3,4,9,8,-1,
+        4,0,5,9,-1,
+        ]
+        }
+  }

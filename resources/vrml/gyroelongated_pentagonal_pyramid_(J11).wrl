@@ -1,0 +1,103 @@
+#VRML V1.0 ascii
+
+Separator {
+  DEF Title Info {
+    string "gyroelongated pentagonal pyramid (J11).  16 faces.  11 vertices."
+    }
+  DEF SceneInfo Info {
+    string "(c) George W. Hart, Jan. 1996.  george@li.net"
+    string "Dept. Computer Science, Hofstra University."
+    string "Freely distributable for noncommercial purposes."
+    }
+  DEF BackgroundColor Info {   # sky
+    string "0 0 1"
+    }
+  DEF Viewer Info {
+    string "examiner"
+    }
+  DirectionalLight {
+    direction -.5 -1 0
+    intensity .75
+    }
+  DirectionalLight {
+    direction .5 1 0
+    intensity .75
+    }
+  Coordinate3 {
+    point [
+	-0.722759 -0.425905 0.628394,
+	-0.669286 0.622275 0.513309,
+	-0.502035 -0.868253 -0.304556,
+	-0.415513 0.827739 -0.490768,
+	-0.312146 -0.093458 -0.996236,
+	0.134982 0.097675 0.952322,
+	0.238349 -0.823522 0.446854,
+	0.324871 0.872469 0.260642,
+	0.492123 -0.618058 -0.557222,
+	0.545596 0.430122 -0.672308,
+	0.885820 -0.021082 0.219570,
+	]
+    }
+  Material {     # 3-sided faces
+    diffuseColor 1.000 0.100 0.100
+    }
+  IndexedFaceSet {
+    coordIndex [
+	6,2,8,-1,
+	8,2,4,-1,
+	8,4,9,-1,
+	9,4,3,-1,
+	9,3,7,-1,
+	7,3,1,-1,
+	7,1,5,-1,
+	5,1,0,-1,
+	5,0,6,-1,
+	6,0,2,-1,
+	6,8,10,-1,
+	8,9,10,-1,
+	9,7,10,-1,
+	7,5,10,-1,
+	5,6,10,-1,
+	]
+    }
+  Material {     # 5-sided faces
+    diffuseColor 0.200 1.000 0.200
+    }
+  IndexedFaceSet {
+    coordIndex [
+	1,3,4,2,0,-1,
+	]
+    }
+  Material {
+    diffuseColor 0 0 0    # black edges
+    }
+  IndexedLineSet {
+    coordIndex [
+	6,2,-1,
+	2,8,-1,
+	8,6,-1,
+	2,4,-1,
+	4,8,-1,
+	4,9,-1,
+	9,8,-1,
+	4,3,-1,
+	3,9,-1,
+	3,7,-1,
+	7,9,-1,
+	3,1,-1,
+	1,7,-1,
+	1,5,-1,
+	5,7,-1,
+	1,0,-1,
+	0,5,-1,
+	0,6,-1,
+	6,5,-1,
+	0,2,-1,
+	8,10,-1,
+	10,6,-1,
+	9,10,-1,
+	7,10,-1,
+	5,10,-1,
+	]
+    }
+  }

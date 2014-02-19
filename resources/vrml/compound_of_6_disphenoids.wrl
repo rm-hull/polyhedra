@@ -1,0 +1,78 @@
+#VRML V1.0 ascii
+
+Separator {
+  DEF Title Info {
+    string "compound of six tetragonal disphenoids"
+    }
+  DEF SceneInfo Info {
+    string "(c) George W. Hart, June. 1996.  george@li.net"
+    string "Dept. Computer Science, Hofstra University."
+    string "Freely distributable for noncommercial purposes."
+    }
+  DEF BackgroundColor Info {   # sky
+    string "0.2 0.5 1"
+    }
+  DEF Viewer Info {
+    string "examiner"
+    }
+  DirectionalLight {
+    direction -.5 -1 0
+    intensity .75
+    }
+  DirectionalLight {
+    direction .5 1 0
+    intensity .75
+    }
+ DEF tet2 Separator {
+  DEF tet1 Separator {
+  Scale { scaleFactor  1 1 1.414214 }        # scale sqrt 2
+   Rotation {  rotation  0 0 1    0.785398163}     # align
+   Coordinate3 {
+      point [
+	1. 1. 1.,
+	-1. 1. -1.,
+	-1. -1. 1.,
+	1. -1. -1.,
+	]
+      }
+   Material {     # 3-sided faces
+    diffuseColor 0.9 0.1 0.1
+    }
+   IndexedFaceSet {
+    coordIndex [
+	0,1,2,-1,
+	1,0,3,-1,
+	2,3,0,-1,
+	3,2,1,-1,
+	]
+    }
+   Material {
+    diffuseColor 0 0 0    # black edges
+    }
+   IndexedLineSet {
+    coordIndex [
+	0,1,-1,
+	1,2,-1,
+	2,0,-1,
+	0,3,-1,
+	3,1,-1,
+	2,3,-1,
+	]
+    }  
+   }
+  Separator {
+    Rotation {  rotation  0 0 1      1.570796326795}     # pi/2
+    USE tet1
+    }
+  }
+  Separator {
+    Rotation {  rotation  1 1 1      2.094395102393}     # 2 pi/3
+    USE tet2
+    }
+  Separator {
+    Rotation {  rotation  1 1 1    -2.094395102393}     # 2 pi/3
+    USE tet2
+    }
+
+ }
+

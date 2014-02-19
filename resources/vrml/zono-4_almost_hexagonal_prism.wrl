@@ -1,0 +1,100 @@
+#VRML V1.0 ascii
+
+Separator {
+  DEF Title Info {
+    string "zono-4_almost_hexagonal_prism"
+    }
+  DEF SceneInfo Info {
+    string "(c) George W. Hart, Jan. 1996.  george@li.net"
+    string "Dept. Computer Science, Hofstra University."
+    string "Freely distributable for noncommercial purposes."
+    }
+  DEF BackgroundColor Info { # blue sky
+    string "0.2 0.5 1"
+    }
+  DEF Viewer Info {
+    string "examiner"
+    }
+  ShapeHints {
+    vertexOrdering UNKNOWN_ORDERING
+    creaseAngle    0
+    }
+  DirectionalLight {
+    direction -.5 -1 0
+    intensity 0.75
+    }
+  DirectionalLight {
+    direction .5 1 0
+    intensity 0.75
+    }
+  Separator {
+    Coordinate3 {
+	point [
+	-1.98575 0 -0.880855,
+	-1.98575 0 1.11915,
+	-0.992877 -1.71971 -1.11915,
+	-0.992877 -1.71971 0.880855,
+	-0.992877 1.71971 -1.11915,
+	-0.992877 1.71971 0.880855,
+	0 0 1.35744,
+	0 0 -1.35744,
+	0.992877 -1.71971 -0.880855,
+	0.992877 -1.71971 1.11915,
+	0.992877 1.71971 -0.880855,
+	0.992877 1.71971 1.11915,
+	1.98575 0 -1.11915,
+	1.98575 0 0.880855,
+	]
+      }
+    Material {
+      diffuseColor .9 .8 0.5 # unknown
+      }
+    IndexedFaceSet {
+      coordIndex [
+	4,0,2,7,-1,
+	12,8,2,7,-1,
+	12,10,4,7,-1,
+	3,1,0,2,-1,
+	5,1,0,4,-1,
+	3,9,8,2,-1,
+	5,11,10,4,-1,
+	13,9,8,12,-1,
+	13,11,10,12,-1,
+	9,6,1,3,-1,
+	11,6,1,5,-1,
+	11,6,9,13,-1,
+	]
+      }
+    Material {
+      diffuseColor 0 0 0     # black edges
+      }
+    IndexedLineSet {
+      coordIndex [
+	0,1,-1,
+	0,2,-1,
+	0,4,-1,
+	1,3,-1,
+	1,5,-1,
+	1,6,-1,
+	2,3,-1,
+	2,7,-1,
+	2,8,-1,
+	3,9,-1,
+	4,5,-1,
+	4,7,-1,
+	4,10,-1,
+	5,11,-1,
+	6,9,-1,
+	6,11,-1,
+	7,12,-1,
+	8,9,-1,
+	8,12,-1,
+	9,13,-1,
+	10,11,-1,
+	10,12,-1,
+	11,13,-1,
+	12,13,-1,
+	]
+      }
+    }
+  }

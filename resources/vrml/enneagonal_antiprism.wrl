@@ -1,0 +1,114 @@
+#VRML V1.0 ascii
+
+Separator {
+  DEF Title Info {
+    string "enneagonal antiprism"
+    }
+  DEF SceneInfo Info {
+    string "(c) George W. Hart, 1997.  george@li.net"
+    string "Dept. Computer Science, Hofstra University."
+    string "Freely distributable for noncommercial purposes."
+    }
+  DEF BackgroundColor Info { # blue sky
+    string "0.2 0.5 1"
+    }
+  DEF Viewer Info {
+    string "examiner"
+    }
+  ShapeHints {
+    vertexOrdering UNKNOWN_ORDERING
+    faceType UNKNOWN_FACE_TYPE
+    creaseAngle 0
+    }
+  DirectionalLight {
+    direction -.5 -1 0
+    intensity 0.75
+    }
+  DirectionalLight {
+    direction .5 1 0
+    intensity 0.75
+    }
+  Separator {
+    Coordinate3 {
+	point [
+	0 0 1.058591,
+	0.6561484 0 0.830713,
+	0.2885036 0.5893186 0.830713,
+	-0.4024426 0.518238 0.830713,
+	-0.6424056 -0.1335877 0.830713,
+	1.01902 -0.1335877 0.2537058,
+	0.830713 0.518238 0.4024426,
+	-0.9188241 0.3382559 0.4024426,
+	-0.9704798 -0.3382559 0.2537058,
+	0.9188241 -0.3382559 -0.4024426,
+	0.9704798 0.3382559 -0.2537058,
+	-1.01902 0.1335877 -0.2537058,
+	-0.830713 -0.518238 -0.4024426,
+	0.4024426 -0.518238 -0.830713,
+	0.6424056 0.1335877 -0.830713,
+	-0.6561484 0 -0.830713,
+	-0.2885036 -0.5893186 -0.830713,
+	0 0 -1.058591,
+	]
+      }
+    Material {
+      diffuseColor 0.9 0.3 0.3     # 3-sided faces red
+      }
+    IndexedFaceSet {
+      coordIndex [
+	0,1,2,-1,
+	0,2,3,-1,
+	0,3,4,-1,
+	1,5,6,-1,
+	1,6,2,-1,
+	3,7,4,-1,
+	4,7,8,-1,
+	5,9,10,-1,
+	5,10,6,-1,
+	7,11,8,-1,
+	8,11,12,-1,
+	9,13,14,-1,
+	9,14,10,-1,
+	11,15,12,-1,
+	12,15,16,-1,
+	13,16,17,-1,
+	13,17,14,-1,
+	15,17,16,-1,
+	]
+      }
+    Material {
+      diffuseColor 0.5 0.2 0.8     # 9-sided faces purple
+      }
+    IndexedFaceSet {
+      coordIndex [
+	0,4,8,12,16,13,9,5,1,-1,
+	2,6,10,14,17,15,11,7,3,-1,
+	]
+      }
+    Material {
+      diffuseColor 0 0 0     # black edges
+      }
+    IndexedLineSet {
+      coordIndex [
+	0,2,-1,
+	0,3,-1,
+	1,2,-1,
+	1,6,-1,
+	3,4,-1,
+	4,7,-1,
+	5,6,-1,
+	5,10,-1,
+	7,8,-1,
+	8,11,-1,
+	9,10,-1,
+	9,14,-1,
+	11,12,-1,
+	12,15,-1,
+	13,14,-1,
+	13,17,-1,
+	15,16,-1,
+	16,17,-1,
+	]
+      }
+    }
+  }

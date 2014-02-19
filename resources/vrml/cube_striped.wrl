@@ -1,0 +1,96 @@
+#VRML V1.0 ascii
+
+Separator {
+  DEF Title Info {
+    string "octahedral symmetry planes"
+    }
+  DEF SceneInfo Info {
+    string "(c) George W. Hart, Jun. 1996.  george@li.net"
+    string "Dept. Computer Science, Hofstra University."
+    string "Freely distributable for noncommercial purposes."
+    }
+  DEF BackgroundColor Info { # blue sky
+    string "0.3 0.5 1"
+    }
+  DEF Viewer Info {
+    string "examiner"
+    }
+  DirectionalLight {
+    direction -.5 -1 2
+    intensity 0.75
+    }
+  DirectionalLight {
+    direction .5 1 -2
+    intensity 0.75
+    }
+  Separator {     #prototype cube
+    Coordinate3 {
+	point [
+	1 1 1,
+	-1 1 1,
+	-1 -1 1,
+	1 -1 1,
+	1 -1 -1,
+	1 1 -1,
+	-1 1 -1,
+	-1 -1 -1,
+	0 0 1.723,  #these 6 not needed
+	0 0 -1.723,
+	0 1.723 0,
+	-1.723 0 0,
+	0 -1.723 0,
+	1.723 0 0,
+	0 1 1,  
+	-1 0 1,
+	0 -1 1,
+	1 0 1,
+	0 1 -1,
+	-1 0 -1,
+	0 -1 -1,
+	1 0 -1,
+	-1 1 0,
+	-1 -1 0,
+	1 -1 0,
+	1 1 0,
+	]
+      }
+    Material {
+      diffuseColor 0.4 0.4 0.95     # bluish
+      }
+    IndexedFaceSet {
+      coordIndex [
+	0,14,16,3,-1,  #last 3 parallel to faces
+	2,16,14,1,-1,
+	5,18,20,4,-1,
+	7,20,18,6,-1,
+	0,25,22,1,-1,
+	6,22,25,5,-1,
+	2,23,24,3,-1,
+	4,24,23,7,-1,
+	2,15,19,7,-1,
+	6,19,15,1,-1,
+	0,17,21,5,-1,
+	4,21,17,3,-1,
+	]
+      }
+    Material {
+      diffuseColor 0 0 0     # black edges
+      }
+    IndexedLineSet {
+      coordIndex [
+	0,1,2,3,0,-1,
+	4,5,6,7,4,-1,
+	14,16,-1,
+	18,20,-1,
+	0,5,-1,
+	1,6,-1,
+	2,7,-1,
+	3,4,-1,
+	22,25,-1,
+	23,24,-1,
+	15,19,-1,
+	17,21,-1,
+	]
+      }
+    }
+  }

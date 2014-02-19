@@ -1,0 +1,103 @@
+#VRML V1.0 ascii
+
+Separator {
+  DEF Title Info {
+    string "elongated pentagonal dipyramid (J16).  15 faces.  12 vertices."
+    }
+  DEF SceneInfo Info {
+    string "(c) George W. Hart, Jan. 1996.  george@li.net"
+    string "Dept. Computer Science, Hofstra University."
+    string "Freely distributable for noncommercial purposes."
+    }
+  DEF BackgroundColor Info {   # sky
+    string "0 0 1"
+    }
+  DEF Viewer Info {
+    string "examiner"
+    }
+  DirectionalLight {
+    direction -.5 -1 0
+    intensity .75
+    }
+  DirectionalLight {
+    direction .5 1 0
+    intensity .75
+    }
+  Coordinate3 {
+    point [
+	-0.931836 0.219976 -0.264632,
+	-0.636706 0.318353 0.692816,
+	-0.613483 -0.735083 -0.264632,
+	-0.326545 0.979634 0.000000,
+	-0.318353 -0.636706 0.692816,
+	-0.159176 0.477529 -0.856368,
+	0.159176 -0.477529 -0.856368,
+	0.318353 0.636706 0.692816,
+	0.326545 -0.979634 0.000000,
+	0.613482 0.735082 -0.264632,
+	0.636706 -0.318353 0.692816,
+	0.931835 -0.219977 -0.264632,
+	]
+    }
+  Material {     # 3-sided faces
+    diffuseColor 1.000 0.100 0.100
+    }
+  IndexedFaceSet {
+    coordIndex [
+	11,10,8,-1,
+	7,9,3,-1,
+	6,11,8,-1,
+	9,5,3,-1,
+	2,6,8,-1,
+	5,0,3,-1,
+	4,2,8,-1,
+	0,1,3,-1,
+	10,4,8,-1,
+	1,7,3,-1,
+	]
+    }
+  Material {     # 4-sided faces
+    diffuseColor 0.300 0.300 1.000
+    }
+  IndexedFaceSet {
+    coordIndex [
+	10,11,9,7,-1,
+	11,6,5,9,-1,
+	6,2,0,5,-1,
+	2,4,1,0,-1,
+	4,10,7,1,-1,
+	]
+    }
+  Material {
+    diffuseColor 0 0 0    # black edges
+    }
+  IndexedLineSet {
+    coordIndex [
+	10,11,-1,
+	11,9,-1,
+	9,7,-1,
+	7,10,-1,
+	10,8,-1,
+	8,11,-1,
+	9,3,-1,
+	3,7,-1,
+	11,6,-1,
+	6,5,-1,
+	5,9,-1,
+	8,6,-1,
+	5,3,-1,
+	6,2,-1,
+	2,0,-1,
+	0,5,-1,
+	8,2,-1,
+	0,3,-1,
+	2,4,-1,
+	4,1,-1,
+	1,0,-1,
+	8,4,-1,
+	1,3,-1,
+	4,10,-1,
+	7,1,-1,
+	]
+    }
+  }

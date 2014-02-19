@@ -1,0 +1,120 @@
+#VRML V1.0 ascii
+
+Separator {
+  DEF Title Info {
+    string "decagonal antiprism"
+    }
+  DEF SceneInfo Info {
+    string "(c) George W. Hart, 1997.  george@li.net"
+    string "Dept. Computer Science, Hofstra University."
+    string "Freely distributable for noncommercial purposes."
+    }
+  DEF BackgroundColor Info { # blue sky
+    string "0.2 0.5 1"
+    }
+  DEF Viewer Info {
+    string "examiner"
+    }
+  ShapeHints {
+    vertexOrdering UNKNOWN_ORDERING
+    faceType UNKNOWN_FACE_TYPE
+    creaseAngle 0
+    }
+  DirectionalLight {
+    direction -.5 -1 0
+    intensity 0.75
+    }
+  DirectionalLight {
+    direction .5 1 0
+    intensity 0.75
+    }
+  Separator {
+    Coordinate3 {
+	point [
+	0 0 1.047801,
+	0.5971915 0 0.8609583,
+	0.2693671 0.5329907 0.8609583,
+	-0.3541919 0.4808178 0.8609583,
+	-0.5888883 -0.09923864 0.8609583,
+	0.9745794 -0.09923864 0.3717979,
+	0.7817338 0.4808178 0.5055625,
+	-0.8507649 0.3442276 0.5055625,
+	-0.944538 -0.2598101 0.3717979,
+	0.9880143 -0.2598101 -0.2328377,
+	0.9872015 0.3442276 -0.06948012,
+	-1.030678 0.1753927 -0.06948012,
+	-0.931103 -0.4203816 -0.2328377,
+	0.6323646 -0.4203816 -0.7219981,
+	0.8072886 0.1753927 -0.6445227,
+	-0.8252102 0.03880243 -0.6445227,
+	-0.5537152 -0.5196203 -0.7219981,
+	0.04347634 -0.5196203 -0.9088408,
+	0.3107156 0.03880243 -0.9999186,
+	-0.3128435 -0.01337041 -0.9999186,
+	]
+      }
+    Material {
+      diffuseColor 0.9 0.3 0.3     # 3-sided faces red
+      }
+    IndexedFaceSet {
+      coordIndex [
+	0,1,2,-1,
+	0,2,3,-1,
+	0,3,4,-1,
+	1,5,6,-1,
+	1,6,2,-1,
+	3,7,4,-1,
+	4,7,8,-1,
+	5,9,10,-1,
+	5,10,6,-1,
+	7,11,8,-1,
+	8,11,12,-1,
+	9,13,14,-1,
+	9,14,10,-1,
+	11,15,12,-1,
+	12,15,16,-1,
+	13,17,18,-1,
+	13,18,14,-1,
+	15,19,16,-1,
+	16,19,17,-1,
+	17,19,18,-1,
+	]
+      }
+    Material {
+      diffuseColor 1. 0.6 0.2     # 10-sided faces orange
+      }
+    IndexedFaceSet {
+      coordIndex [
+	0,4,8,12,16,17,13,9,5,1,-1,
+	2,6,10,14,18,19,15,11,7,3,-1,
+	]
+      }
+    Material {
+      diffuseColor 0 0 0     # black edges
+      }
+    IndexedLineSet {
+      coordIndex [
+	0,2,-1,
+	0,3,-1,
+	1,2,-1,
+	1,6,-1,
+	3,4,-1,
+	4,7,-1,
+	5,6,-1,
+	5,10,-1,
+	7,8,-1,
+	8,11,-1,
+	9,10,-1,
+	9,14,-1,
+	11,12,-1,
+	12,15,-1,
+	13,14,-1,
+	13,18,-1,
+	15,16,-1,
+	16,19,-1,
+	17,18,-1,
+	17,19,-1,
+	]
+      }
+    }
+  }

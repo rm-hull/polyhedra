@@ -1,0 +1,195 @@
+#VRML V1.0 ascii
+
+Separator {
+  DEF Title Info {
+    string "compound of octahedron and cube with symmetry axes"
+    }
+  DEF SceneInfo Info {
+    string "(c) George W. Hart, Jan. 1996.  george@li.net"
+    string "Dept. Computer Science, Hofstra University."
+    string "Freely distributable for noncommercial purposes."
+    }
+  DEF BackgroundColor Info { # blue sky
+    string "0 0 1"
+    }
+  DEF Viewer Info {
+    string "examiner"
+    }
+  DirectionalLight {
+    direction -.5 -1 0
+    intensity 0.75
+    }
+  DirectionalLight {
+    direction .5 1 0
+    intensity 0.75
+    }
+  Separator {
+    Coordinate3 {
+	point [
+	0 0 1.41421,
+	1.41421 0 0,
+	0 1.41421 0,
+	-1.41421 0 0,
+	0 -1.41421 0,
+	0 0 -1.41421,
+	]
+      }
+    Material {
+      diffuseColor 1. 0.1 0.1     # 3-sided faces red
+      }
+    IndexedFaceSet {
+      coordIndex [
+	0,1,2,-1,
+	0,2,3,-1,
+	0,3,4,-1,
+	0,4,1,-1,
+	1,4,5,-1,
+	1,5,2,-1,
+	2,5,3,-1,
+	3,5,4,-1,
+	]
+      }
+    Material {
+      diffuseColor 0 0 0     # black edges
+      }
+    IndexedLineSet {
+      coordIndex [
+	0,1,-1,
+	0,2,-1,
+	0,3,-1,
+	0,4,-1,
+	1,2,-1,
+	1,4,-1,
+	1,5,-1,
+	2,3,-1,
+	2,5,-1,
+	3,4,-1,
+	3,5,-1,
+	4,5,-1,
+	]
+      }
+    }
+  Separator {     #dual starts here
+    Coordinate3 {
+	point [
+	0.707107 0.707107 0.707107,
+	-0.707107 0.707107 0.707107,
+	-0.707107 -0.707107 0.707107,
+	0.707107 -0.707107 0.707107,
+	0.707107 -0.707107 -0.707107,
+	0.707107 0.707107 -0.707107,
+	-0.707107 0.707107 -0.707107,
+	-0.707107 -0.707107 -0.707107,
+	]
+      }
+    Material {
+      diffuseColor 0.15 0.15 0.5     # 4-sided faces dark blue
+      }
+    IndexedFaceSet {
+      coordIndex [
+	3,0,1,2,-1,
+	3,4,5,0,-1,
+	0,5,6,1,-1,
+	1,6,7,2,-1,
+	2,7,4,3,-1,
+	5,4,7,6,-1,
+	]
+      }
+    Material {
+      diffuseColor 0 0 0            # black edges
+      }
+    IndexedLineSet {
+      coordIndex [
+	0,1,-1,
+	0,3,-1,
+	0,5,-1,
+	1,2,-1,
+	1,6,-1,
+	2,3,-1,
+	2,7,-1,
+	3,4,-1,
+	4,5,-1,
+	4,7,-1,
+	5,6,-1,
+	6,7,-1,
+	]
+      }
+    }
+
+  Scale { scaleFactor  2 2 2 }        # extend axes
+  Separator {  
+    Coordinate3 {                       # 4-fold axes
+	point [
+	0 0 1.41421,
+	1.41421 0 0,
+	0 1.41421 0,
+	-1.41421 0 0,
+	0 -1.41421 0,
+	0 0 -1.41421,
+	]
+      }
+    Material {
+      diffuseColor 1 1 1                # white
+      }
+    IndexedLineSet {
+      coordIndex [
+	0,5,-1,
+	1,3,-1,
+	2,4,-1,
+	]
+      }
+    }
+    Coordinate3 {                         # 3-fold axes
+	point [
+	0.707107 0.707107 0.707107,
+	-0.707107 0.707107 0.707107,
+	-0.707107 -0.707107 0.707107,
+	0.707107 -0.707107 0.707107,
+	0.707107 -0.707107 -0.707107,
+	0.707107 0.707107 -0.707107,
+	-0.707107 0.707107 -0.707107,
+	-0.707107 -0.707107 -0.707107,
+	]
+      }
+    Material {
+      diffuseColor 1 1 1          # white
+      }
+    IndexedLineSet {
+      coordIndex [
+	0,7,-1,
+	1,4,-1,
+	2,5,-1,
+	3,6,-1,
+	]
+      }
+    Coordinate3 {                         # 2-fold axes
+	point [
+	0 1 1,
+	0 -1 -1,
+	0 1 -1,
+	0 -1 1,
+	1 0 1,
+	-1 0 -1,
+	1 0 -1,
+	-1 0 1,
+	1 1 0,
+	-1 -1 0,
+	1 -1 0,
+	-1 1 0,
+	]
+      }
+    Material {
+      diffuseColor 1 1 1          # white
+      }
+    IndexedLineSet {
+      coordIndex [
+	0,1,-1,
+	2,3,-1,
+	4,5,-1,
+	6,7,-1,
+	8,9,-1,
+	10,11,-1,
+	]
+      }
+    }
+  }

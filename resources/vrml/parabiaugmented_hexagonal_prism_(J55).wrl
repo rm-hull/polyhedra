@@ -1,0 +1,112 @@
+#VRML V1.0 ascii
+
+Separator {
+  DEF Title Info {
+    string "parabiaugmented hexagonal prism (J55).  14 faces.  14 vertices."
+    }
+  DEF SceneInfo Info {
+    string "(c) George W. Hart, Jan. 1996.  george@li.net"
+    string "Dept. Computer Science, Hofstra University."
+    string "Freely distributable for noncommercial purposes."
+    }
+  DEF BackgroundColor Info {   # sky
+    string "0 0 1"
+    }
+  DEF Viewer Info {
+    string "examiner"
+    }
+  DirectionalLight {
+    direction -.5 -1 0
+    intensity .75
+    }
+  DirectionalLight {
+    direction .5 1 0
+    intensity .75
+    }
+  Coordinate3 {
+    point [
+	-1.129559 0.266324 0.624401,
+	-0.925111 0.008507 -0.145991,
+	-0.655368 -0.416841 0.523404,
+	-0.588300 0.710070 0.164074,
+	-0.438148 0.074567 -0.824427,
+	-0.318557 0.284721 0.833470,
+	-0.101337 0.776130 -0.514362,
+	0.101337 -0.776130 0.514363,
+	0.318557 -0.284721 -0.833468,
+	0.438148 -0.074567 0.824429,
+	0.588300 -0.710069 -0.164073,
+	0.655368 0.416842 -0.523403,
+	0.925111 -0.008507 0.145993,
+	1.129559 -0.266324 -0.624399,
+	]
+    }
+  Material {     # 3-sided faces
+    diffuseColor 1.000 0.100 0.100
+    }
+  IndexedFaceSet {
+    coordIndex [
+	12,13,11,-1,
+	12,10,13,-1,
+	11,13,8,-1,
+	8,13,10,-1,
+	3,0,5,-1,
+	3,1,0,-1,
+	5,0,2,-1,
+	2,0,1,-1,
+	]
+    }
+  Material {     # 4-sided faces
+    diffuseColor 0.300 0.300 1.000
+    }
+  IndexedFaceSet {
+    coordIndex [
+	9,5,2,7,-1,
+	12,9,7,10,-1,
+	6,11,8,4,-1,
+	3,6,4,1,-1,
+	]
+    }
+  Material {     # 6-sided faces
+    diffuseColor 0.900 0.900 0.200
+    }
+  IndexedFaceSet {
+    coordIndex [
+	5,9,12,11,6,3,-1,
+	4,8,10,7,2,1,-1,
+	]
+    }
+  Material {
+    diffuseColor 0 0 0    # black edges
+    }
+  IndexedLineSet {
+    coordIndex [
+	5,9,-1,
+	9,12,-1,
+	12,11,-1,
+	11,6,-1,
+	6,3,-1,
+	3,5,-1,
+	4,8,-1,
+	8,10,-1,
+	10,7,-1,
+	7,2,-1,
+	2,1,-1,
+	1,4,-1,
+	5,2,-1,
+	7,9,-1,
+	10,12,-1,
+	11,8,-1,
+	4,6,-1,
+	1,3,-1,
+	12,13,-1,
+	13,11,-1,
+	10,13,-1,
+	13,8,-1,
+	3,0,-1,
+	0,5,-1,
+	1,0,-1,
+	0,2,-1,
+	]
+    }
+  }

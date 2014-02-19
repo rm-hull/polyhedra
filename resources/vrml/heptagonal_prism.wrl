@@ -1,0 +1,88 @@
+#VRML V1.0 ascii
+
+Separator {
+  DEF Title Info {
+    string "heptagonal prism"
+    }
+  DEF SceneInfo Info {
+    string "(c) George W. Hart, 1997.  george@li.net"
+    string "Dept. Computer Science, Hofstra University."
+    string "Freely distributable for noncommercial purposes."
+    }
+  DEF BackgroundColor Info { # blue sky
+    string "0.2 0.5 1"
+    }
+  DEF Viewer Info {
+    string "examiner"
+    }
+  ShapeHints {
+    vertexOrdering UNKNOWN_ORDERING
+    faceType UNKNOWN_FACE_TYPE
+    creaseAngle 0
+    }
+  DirectionalLight {
+    direction -.5 -1 0
+    intensity 0.75
+    }
+  DirectionalLight {
+    direction .5 1 0
+    intensity 0.75
+    }
+  Separator {
+    Coordinate3 {
+	point [
+	0 0 1.090071,
+	0.796065 0 0.7446715,
+	-0.1498633 0.7818315 0.7446715,
+	-0.7396399 -0.2943675 0.7446715,
+	0.6462017 0.7818315 0.3992718,
+	1.049102 -0.2943675 -0.03143449,
+	-0.8895032 0.487464 0.3992718,
+	-0.8658909 -0.6614378 -0.03143449,
+	0.8992386 0.487464 -0.3768342,
+	0.5685687 -0.6614378 -0.6538232,
+	-1.015754 0.1203937 -0.3768342,
+	-0.2836832 -0.8247995 -0.6538232,
+	0.4187054 0.1203937 -0.9992228,
+	-0.4335465 -0.042968 -0.9992228,
+	]
+      }
+    Material {
+      diffuseColor 0.4 0.4 1.     # 4-sided faces blue
+      }
+    IndexedFaceSet {
+      coordIndex [
+	0,1,4,2,-1,
+	0,2,6,3,-1,
+	1,5,8,4,-1,
+	3,6,10,7,-1,
+	5,9,12,8,-1,
+	7,10,13,11,-1,
+	9,11,13,12,-1,
+	]
+      }
+    Material {
+      diffuseColor 0.5 0.25 0.25     # 7-sided faces brown
+      }
+    IndexedFaceSet {
+      coordIndex [
+	0,3,7,11,9,5,1,-1,
+	2,4,8,12,13,10,6,-1,
+	]
+      }
+    Material {
+      diffuseColor 0 0 0     # black edges
+      }
+    IndexedLineSet {
+      coordIndex [
+	0,2,-1,
+	1,4,-1,
+	3,6,-1,
+	5,8,-1,
+	7,10,-1,
+	9,12,-1,
+	11,13,-1,
+	]
+      }
+    }
+  }

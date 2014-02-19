@@ -1,0 +1,155 @@
+#VRML V1.0 ascii
+
+Separator {
+  DEF Title Info {
+    string "compound of 10 icosahedra"
+    }
+  DEF SceneInfo Info {
+    string "(c) George W. Hart, Jan. 1996.  george@li.net"
+    string "Dept. Computer Science, Hofstra University."
+    string "Freely distributable for noncommercial purposes."
+    }
+  DEF BackgroundColor Info {   # sky
+    string "0.2 0.5 1"
+    }
+  DEF Viewer Info {
+    string "examiner"
+    }
+  DirectionalLight {
+    direction -.5 -1 0
+    intensity .75
+    }
+  DirectionalLight {
+    direction .5 1 0
+    intensity .75
+    }
+
+DEF hedron0  Separator {     #prototype
+  Rotation {  rotation  0.556263 0.556263 0.556263   -1.047197551197}     # pi/3 about 3-fold axis
+  Coordinate3 {
+    point [
+	0.556263 0.556263 0.556263,
+	0.556263 0.556263 -0.556263,
+	0.556263 -0.556263 -0.556263,
+	0.556263 -0.556263 0.556263,
+	-0.556263 -0.556263 0.556263,
+	-0.556263 -0.556263 -0.556263,
+	-0.556263 0.556263 -0.556263,
+	-0.556263 0.556263 0.556263,
+	0.000000 0.343789 0.900053,
+	0.000000 0.343789 -0.900053,
+	0.000000 -0.343789 -0.900053,
+	0.000000 -0.343789 0.900053,
+	0.900053 0.000000 0.343789,
+	0.900053 0.000000 -0.343789,
+	-0.900053 0.000000 -0.343789,
+	-0.900053 0.000000 0.343789,
+	0.343789 0.900053 0.000000,
+	0.343789 -0.900053 0.000000,
+	-0.343789 -0.900053 0.000000,
+	-0.343789 0.900053 0.000000,
+	]
+    }
+  Material {     # 5-sided faces
+    diffuseColor 0.200 1.000 0.200
+    }
+  IndexedFaceSet {
+    coordIndex [
+	7,8,0,16,19,-1,
+	19,16,1,9,6,-1,
+	8,11,3,12,0,-1,
+	1,16,0,12,13,-1,
+	12,3,17,2,13,-1,
+	1,13,2,10,9,-1,
+	11,8,7,15,4,-1,
+	15,7,19,6,14,-1,
+	15,14,5,18,4,-1,
+	5,14,6,9,10,-1,
+	3,11,4,18,17,-1,
+	17,18,5,10,2,-1,
+	]
+    }
+  Material {
+    diffuseColor 0 0 0    # black edges
+    }
+  IndexedLineSet {
+    coordIndex [
+	7,8,-1,
+	8,0,-1,
+	0,16,-1,
+	16,19,-1,
+	19,7,-1,
+	16,1,-1,
+	1,9,-1,
+	9,6,-1,
+	6,19,-1,
+	8,11,-1,
+	11,3,-1,
+	3,12,-1,
+	12,0,-1,
+	12,13,-1,
+	13,1,-1,
+	3,17,-1,
+	17,2,-1,
+	2,13,-1,
+	2,10,-1,
+	10,9,-1,
+	7,15,-1,
+	15,4,-1,
+	4,11,-1,
+	6,14,-1,
+	14,15,-1,
+	14,5,-1,
+	5,18,-1,
+	18,4,-1,
+	10,5,-1,
+	18,17,-1,
+	]
+    }
+   }
+  Separator {
+    Rotation {  rotation  0.556263 0.556263 -0.556263   1.047197551197}   # pi/3 about 3-fold axis
+    Rotation {  rotation  0.556263 0.556263 0.556263    1.047197551197}   # undo 1st pi/3 about 3-fold axis
+    USE hedron0
+    }
+  Separator {
+    Rotation {  rotation  0.556263 -0.556263 -0.556263  1.047197551197}   # pi/3 about 3-fold axis
+    Rotation {  rotation  0.556263 0.556263 0.556263    1.047197551197}   # undo 1st pi/3 about 3-fold axis
+    USE hedron0
+    }
+  Separator {
+    Rotation {  rotation  0.556263 -0.556263 0.556263   1.047197551197}   # pi/3 about 3-fold axis
+    Rotation {  rotation  0.556263 0.556263 0.556263    1.047197551197}   # undo 1st pi/3 about 3-fold axis
+    USE hedron0
+    }
+  Separator {
+    Rotation {  rotation  0.000000 0.343789 0.900053    1.047197551197}   # pi/3 about 3-fold axis
+    Rotation {  rotation  0.556263 0.556263 0.556263    1.047197551197}   # undo 1st pi/3 about 3-fold axis
+    USE hedron0
+    }
+  Separator {
+    Rotation {  rotation  0.000000 0.343789 -0.900053   1.047197551197}   # pi/3 about 3-fold axis
+    Rotation {  rotation  0.556263 0.556263 0.556263    1.047197551197}   # undo 1st pi/3 about 3-fold axis
+    USE hedron0
+    }
+  Separator {
+    Rotation {  rotation  0.900053 0.000000 0.343789    1.047197551197}   # pi/3 about 3-fold axis
+    Rotation {  rotation  0.556263 0.556263 0.556263    1.047197551197}   # undo 1st pi/3 about 3-fold axis
+    USE hedron0
+    }
+  Separator {
+    Rotation {  rotation  0.900053 0.000000 -0.343789   1.047197551197}   # pi/3 about 3-fold axis
+    Rotation {  rotation  0.556263 0.556263 0.556263    1.047197551197}   # undo 1st pi/3 about 3-fold axis
+    USE hedron0
+    }
+  Separator {
+    Rotation {  rotation  0.343789 0.900053 0.000000    1.047197551197}   # pi/3 about 3-fold axis
+    Rotation {  rotation  0.556263 0.556263 0.556263    1.047197551197}   # undo 1st pi/3 about 3-fold axis
+    USE hedron0
+    }
+  Separator {
+    Rotation {  rotation  0.343789 -0.900053 0.000000   1.047197551197}   # pi/3 about 3-fold axis
+    Rotation {  rotation  0.556263 0.556263 0.556263    1.047197551197}   # undo 1st pi/3 about 3-fold axis
+    USE hedron0
+    }
+  }

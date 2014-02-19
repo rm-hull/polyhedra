@@ -1,0 +1,136 @@
+#VRML V1.0 ascii
+
+Separator {
+  DEF Title Info {
+    string "Compound of 5 great triakis octahedra"
+    }
+  DEF SceneInfo Info {
+    string "(c) George W. Hart, Jan. 1996.  george@li.net"
+    string "Dept. Computer Science, Hofstra University."
+    string "Freely distributable for noncommercial purposes."
+    }
+  DEF BackgroundColor Info { # blue sky
+    string "0.2 0.5 1"
+    }
+  DEF Viewer Info {
+    string "examiner"
+    }
+  DirectionalLight {
+    direction -.5 -1 0
+    intensity 0.75
+    }
+  DirectionalLight {
+    direction .5 1 0
+    intensity 0.75
+    }
+  DEF hedron0   Separator {     #prototype 
+    Coordinate3 {
+	point [
+	0.862856 1. 0.505449,
+	-1.11558 0.707107 0.505449,
+	0.862856 -5.82843 0.505449,
+	-0.104682 0.707107 -1.22026,
+	0.357407 -2.41421 -5.3865,
+	-4.52365 -2.41421 2.94598,
+	0.104682 -0.707107 1.22026,
+	5.02909 -1. 2.94598,
+	1.11558 -0.707107 -0.505449,
+	4.52365 2.41421 -2.94598,
+	-5.02909 1. -2.94598,
+	-0.862856 -1. -0.505449,
+	-0.357407 2.41421 5.3865,
+	-0.862856 5.82843 -0.505449,
+	]
+      }
+    Material {
+      diffuseColor 0.5 0.05 0.05     # 3-sided faces dark red
+      }
+    IndexedFaceSet {
+      coordIndex [
+	2,0,1,-1,
+	2,3,0,-1,
+	0,4,1,-1,
+	1,3,2,-1,
+	0,3,5,-1,
+	1,4,6,-1,
+	4,0,6,-1,
+	3,1,7,-1,
+	3,8,5,-1,
+	5,8,0,-1,
+	6,9,1,-1,
+	0,10,6,-1,
+	1,11,7,-1,
+	7,11,3,-1,
+	8,3,12,-1,
+	0,8,10,-1,
+	1,9,11,-1,
+	9,6,11,-1,
+	6,10,8,-1,
+	3,11,12,-1,
+	12,11,8,-1,
+	6,13,11,-1,
+	8,13,6,-1,
+	8,11,13,-1,
+	]
+      }
+    Material {
+      diffuseColor 0 0 0     # black edges
+      }
+    IndexedLineSet {
+      coordIndex [
+	0,1,-1,
+	0,2,-1,
+	0,3,-1,
+	0,4,-1,
+	0,5,-1,
+	0,6,-1,
+	0,8,-1,
+	0,10,-1,
+	1,2,-1,
+	1,3,-1,
+	1,4,-1,
+	1,6,-1,
+	1,7,-1,
+	1,9,-1,
+	1,11,-1,
+	2,3,-1,
+	3,5,-1,
+	3,7,-1,
+	3,8,-1,
+	3,11,-1,
+	3,12,-1,
+	4,6,-1,
+	5,8,-1,
+	6,8,-1,
+	6,9,-1,
+	6,10,-1,
+	6,11,-1,
+	6,13,-1,
+	7,11,-1,
+	8,10,-1,
+	8,11,-1,
+	8,12,-1,
+	8,13,-1,
+	9,11,-1,
+	11,12,-1,
+	11,13,-1,
+	]
+      }
+    }
+  Separator {
+    Rotation {  rotation  -0.942185 2.14412 1.32328     1.256637061436}     # 2 pi/5 about 5-fold axis
+    USE hedron0   
+    }
+  Separator {
+    Rotation {  rotation  -0.942185 2.14412 1.32328     2.513274122872}     # 2 pi/5 about 5-fold axis
+    USE hedron0   
+    }
+  Separator {
+    Rotation {  rotation  -0.942185 2.14412 1.32328     3.769911184308}     # 2 pi/5 about 5-fold axis
+    USE hedron0   
+    }
+  Separator {
+    Rotation {  rotation  -0.942185 2.14412 1.32328     5.026548245744}     # 2 pi/5 about 5-fold axis
+    USE hedron0   
+    }
+  }

@@ -1,0 +1,113 @@
+#VRML V1.0 ascii
+
+Separator {
+  DEF Title Info {
+    string "decagonal dipyramid"
+    }
+  DEF SceneInfo Info {
+    string "(c) George W. Hart, 1997.  george@li.net"
+    string "Dept. Computer Science, Hofstra University."
+    string "Freely distributable for noncommercial purposes."
+    }
+  DEF BackgroundColor Info { # blue sky
+    string "0.2 0.5 1"
+    }
+  DEF Viewer Info {
+    string "examiner"
+    }
+  ShapeHints {
+    vertexOrdering UNKNOWN_ORDERING
+    faceType UNKNOWN_FACE_TYPE
+    creaseAngle 0
+    }
+  DirectionalLight {
+    direction -.5 -1 0
+    intensity 0.75
+    }
+  DirectionalLight {
+    direction .5 1 0
+    intensity 0.75
+    }
+  Separator {
+    Coordinate3 {
+	point [
+	0.2952418 0.3249197 0.9554226,
+	-0.351628 0.2628656 0.9554226,
+	0.2952418 -3.077684 0.9554226,
+	0.8293393 0.2628656 0.5904836,
+	-0.2952418 3.077684 -0.9554226,
+	-0.8641878 0.1004057 0.5904836,
+	1.046657 0.1004057 0,
+	-1.046657 -0.1004057 0,
+	0.8641878 -0.1004057 -0.5904836,
+	-0.8293393 -0.2628656 -0.5904836,
+	0.351628 -0.2628656 -0.9554226,
+	-0.2952418 -0.3249197 -0.9554226,
+	]
+      }
+    Material {
+      diffuseColor 0.9 0.3 0.3     # 3-sided faces red
+      }
+    IndexedFaceSet {
+      coordIndex [
+	2,0,1,-1,
+	2,3,0,-1,
+	0,4,1,-1,
+	1,5,2,-1,
+	0,3,4,-1,
+	3,2,6,-1,
+	1,4,5,-1,
+	2,5,7,-1,
+	3,6,4,-1,
+	2,8,6,-1,
+	4,7,5,-1,
+	7,9,2,-1,
+	4,6,8,-1,
+	8,2,10,-1,
+	7,4,9,-1,
+	2,9,11,-1,
+	8,10,4,-1,
+	2,11,10,-1,
+	4,11,9,-1,
+	4,10,11,-1,
+	]
+      }
+    Material {
+      diffuseColor 0 0 0     # black edges
+      }
+    IndexedLineSet {
+      coordIndex [
+	0,1,-1,
+	0,2,-1,
+	0,3,-1,
+	0,4,-1,
+	1,2,-1,
+	1,4,-1,
+	1,5,-1,
+	2,3,-1,
+	2,5,-1,
+	2,6,-1,
+	2,7,-1,
+	2,8,-1,
+	2,9,-1,
+	2,10,-1,
+	2,11,-1,
+	3,4,-1,
+	3,6,-1,
+	4,5,-1,
+	4,6,-1,
+	4,7,-1,
+	4,8,-1,
+	4,9,-1,
+	4,10,-1,
+	4,11,-1,
+	5,7,-1,
+	6,8,-1,
+	7,9,-1,
+	8,10,-1,
+	9,11,-1,
+	10,11,-1,
+	]
+      }
+    }
+  }

@@ -1,0 +1,92 @@
+#VRML V1.0 ascii
+
+Separator {
+  DEF Title Info {
+    string "canonical_metabidiminished_icosahedron"
+    }
+  DEF SceneInfo Info {
+    string "(c) George W. Hart, Jan. 1996.  george@li.net"
+    string "Dept. Computer Science, Hofstra University."
+    string "Freely distributable for noncommercial purposes."
+    }
+  DEF BackgroundColor Info { # blue sky
+    string "0.2 0.5 1"
+    }
+  DEF Viewer Info {
+    string "examiner"
+    }
+  ShapeHints {
+    vertexOrdering UNKNOWN_ORDERING
+    creaseAngle    0
+    }
+  DirectionalLight {
+    direction -.5 -1 0
+    intensity 0.75
+    }
+  DirectionalLight {
+    direction .5 1 0
+    intensity 0.75
+    }
+  Separator {
+    Coordinate3 {
+	point [
+	-1.23225 0.262124 -0.39011,
+	-0.691161 -0.87154 0.325393,
+	-0.671676 0.128363 0.935703,
+	-0.197191 -0.834109 -0.893054,
+	-0.157931 1.18062 0.336678,
+	0.0858567 -0.569541 0.930368,
+	0.279518 0.66752 -1.10256,
+	0.866879 -0.360103 0.562299,
+	0.975328 -0.424655 -0.459967,
+	0.994813 0.575248 0.150344,
+	]
+      }
+    Material {
+      diffuseColor .9 .8 0.5 # unknown
+      }
+    IndexedFaceSet {
+      coordIndex [
+	6,3,0,-1,
+	0,3,1,-1,
+	1,5,2,-1,
+	1,2,0,-1,
+	2,4,0,-1,
+	4,9,6,-1,
+	4,6,0,-1,
+	7,8,9,-1,
+	8,6,9,-1,
+	8,3,6,-1,
+	1,3,8,7,5,-1,
+	2,5,7,9,4,-1,
+	]
+      }
+    Material {
+      diffuseColor 0 0 0     # black edges
+      }
+    IndexedLineSet {
+      coordIndex [
+	0,1,-1,
+	0,2,-1,
+	0,3,-1,
+	0,4,-1,
+	0,6,-1,
+	1,2,-1,
+	1,3,-1,
+	1,5,-1,
+	2,4,-1,
+	2,5,-1,
+	3,6,-1,
+	3,8,-1,
+	4,6,-1,
+	4,9,-1,
+	5,7,-1,
+	6,8,-1,
+	6,9,-1,
+	7,8,-1,
+	7,9,-1,
+	8,9,-1,
+	]
+      }
+    }
+  }

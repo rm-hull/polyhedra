@@ -1,0 +1,93 @@
+#VRML V1.0 ascii
+
+Separator {
+  DEF Title Info {
+    string "Dual to Cubes A5/D3 version b"
+    }
+  DEF SceneInfo Info {
+    string "(c) George W. Hart, Jan. 1996.  george@li.net"
+    string "Dept. Computer Science, Hofstra University."
+    string "Freely distributable for noncommercial purposes."
+    }
+  DEF BackgroundColor Info { # blue sky
+    string "0.2 0.5 1"
+    }
+  DEF Viewer Info {
+    string "examiner"
+    }
+  DirectionalLight {
+    direction -.5 -1 0
+    intensity 0.75
+    }
+  DirectionalLight {
+    direction .5 1 0
+    intensity 0.75
+    }
+  DEF cubes2 Separator {
+   DEF cube0     Separator {  # octahedron replaces cube
+    Rotation {  rotation  1 1 1   0.38813}   # alignment from 5-cube position to 10-cube position
+    Coordinate3 {
+	point [
+	0 0 1.41421,
+	1.41421 0 0,
+	0 1.41421 0,
+	-1.41421 0 0,
+	0 -1.41421 0,
+	0 0 -1.41421,
+	]
+      }
+    Material {
+      diffuseColor 1. 0.1 0.1     # 3-sided faces red
+      }
+    IndexedFaceSet {
+      coordIndex [
+	0,1,2,-1,
+	0,2,3,-1,
+	0,3,4,-1,
+	0,4,1,-1,
+	1,4,5,-1,
+	1,5,2,-1,
+	2,5,3,-1,
+	3,5,4,-1,
+	]
+      }
+    Material {
+      diffuseColor 0 0 0     # black edges
+      }
+    IndexedLineSet {
+      coordIndex [
+	0,1,-1,
+	0,2,-1,
+	0,3,-1,
+	0,4,-1,
+	1,2,-1,
+	1,4,-1,
+	1,5,-1,
+	2,3,-1,
+	2,5,-1,
+	3,4,-1,
+	3,5,-1,
+	4,5,-1,
+	]
+      }
+    }
+    Rotation {  rotation  0 1 1.61803    -1.256637061436}   # copy 3-fold axis to neighbor in next row down
+    USE cube0
+    }
+  Separator {
+    Rotation {  rotation  1 1.61803 0     1.256637061436}     # 2 pi/5 about 5-fold axis
+    USE cubes2
+    }
+  Separator {
+    Rotation {  rotation  1 1.61803 0     2.513274122872}     # 2 pi/5 about 5-fold axis
+    USE cubes2
+    }
+  Separator {
+    Rotation {  rotation  1 1.61803 0     3.769911184308}     # 2 pi/5 about 5-fold axis
+    USE cubes2
+    }
+  Separator {
+    Rotation {  rotation  1 1.61803 0     5.026548245744}     # 2 pi/5 about 5-fold axis
+    USE cubes2
+    }
+  }

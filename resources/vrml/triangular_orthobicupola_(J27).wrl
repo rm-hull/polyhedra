@@ -1,0 +1,101 @@
+#VRML V1.0 ascii
+
+Separator {
+  DEF Title Info {
+    string "triangular orthobicupola (J27).  14 faces.  12 vertices."
+    }
+  DEF SceneInfo Info {
+    string "(c) George W. Hart, Jan. 1996.  george@li.net"
+    string "Dept. Computer Science, Hofstra University."
+    string "Freely distributable for noncommercial purposes."
+    }
+  DEF BackgroundColor Info {   # sky
+    string "0 0 1"
+    }
+  DEF Viewer Info {
+    string "examiner"
+    }
+  DirectionalLight {
+    direction -.5 -1 0
+    intensity .75
+    }
+  DirectionalLight {
+    direction .5 1 0
+    intensity .75
+    }
+  Coordinate3 {
+    point [
+	-0.969360 0.238651 0.058198,
+	-0.683128 -0.715413 0.146701,
+	-0.623092 -0.255511 -0.739236,
+	-0.478567 -0.062330 0.875836,
+	-0.286232 0.954064 -0.088503,
+	0.060036 0.459902 -0.885938,
+	0.204561 0.653083 0.729135,
+	0.286232 -0.954064 0.088503,
+	0.346268 -0.494162 -0.797435,
+	0.490793 -0.300981 0.817638,
+	0.683128 0.715413 -0.146701,
+	0.969360 -0.238651 -0.058198,
+	]
+    }
+  Material {     # 3-sided faces
+    diffuseColor 1.000 0.100 0.100
+    }
+  IndexedFaceSet {
+    coordIndex [
+	2,5,8,-1,
+	5,4,10,-1,
+	8,11,7,-1,
+	2,1,0,-1,
+	6,3,9,-1,
+	3,0,1,-1,
+	9,7,11,-1,
+	6,10,4,-1,
+	]
+    }
+  Material {     # 4-sided faces
+    diffuseColor 0.300 0.300 1.000
+    }
+  IndexedFaceSet {
+    coordIndex [
+	5,2,0,4,-1,
+	8,5,10,11,-1,
+	2,8,7,1,-1,
+	3,6,4,0,-1,
+	9,3,1,7,-1,
+	6,9,11,10,-1,
+	]
+    }
+  Material {
+    diffuseColor 0 0 0    # black edges
+    }
+  IndexedLineSet {
+    coordIndex [
+	2,5,-1,
+	5,8,-1,
+	8,2,-1,
+	2,0,-1,
+	0,4,-1,
+	4,5,-1,
+	4,10,-1,
+	10,5,-1,
+	10,11,-1,
+	11,8,-1,
+	11,7,-1,
+	7,8,-1,
+	7,1,-1,
+	1,2,-1,
+	1,0,-1,
+	6,3,-1,
+	3,9,-1,
+	9,6,-1,
+	6,4,-1,
+	0,3,-1,
+	1,3,-1,
+	7,9,-1,
+	11,9,-1,
+	10,6,-1,
+	]
+    }
+  }
