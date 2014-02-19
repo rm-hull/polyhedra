@@ -1,16 +1,6 @@
-# Polyhedra
+# The MIT License (MIT)
 
-A Clojure/Clojurescript library for reading netlib polyhedra data files
-
-## References
-
-* http://www.netlib.org/polyhedra/
-* http://polyhedra.org/poly
-* http://www.georgehart.com/virtual-polyhedra/netlib-info.html
-
-## The MIT License (MIT)
-
-Copyright (c) 2014 Richard Hull
+Copyright (c) 2013 Richard Hull
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
