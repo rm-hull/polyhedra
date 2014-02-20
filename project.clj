@@ -8,11 +8,11 @@
   :scm {:url "git@github.com:rm-hull/polyhedra"}
   :min-lein-version "2.3.4"
   :global-vars {*warn-on-reflection* true}
-  :plugins [[lein-cljsbuild "1.0.0"]]
+  :plugins [[lein-cljsbuild "1.0.2"]]
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [rm-hull/cljs-test "0.0.7"]
                  [rm-hull/cljs-dataview "0.0.1-SNAPSHOT"]
-                 [org.clojure/clojurescript "0.0-2138"]]
+                 [org.clojure/clojurescript "0.0-2156"]]
   :cljsbuild {
     :test-commands {"phantomjs" ["phantomjs" "target/unit-test.js"]}
     :builds {
