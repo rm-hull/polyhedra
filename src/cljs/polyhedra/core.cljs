@@ -1,5 +1,7 @@
 (ns polyhedra.core
-  (:require [dataview.ops :refer [read-utf8-string]]))
+  (:require
+    [dataview.ops :refer [read-utf8-string]]
+    [wireframes.transform :refer [point]]))
 
 (defn parse-float [s]
   (js/parseFloat s))
@@ -24,3 +26,24 @@
         offset (if (= (get value 0) \:) 1 0)]
     (keyword
       (subs value offset (dec (count value))))))
+
+(defn point-spec
+  [reader]
+  (apply point (doall (repeatedly 3 #(value-spec reader)))))
+
+(defn count-spec
+  [reader]
+  (let [value (value-spec reader)]
+    ;(read-utf8-string reader #{\newline}) ; ignore 2nd value
+    value))
+
+(defn vertices-spec
+  [reader]
+  (let [kw (keyword-spec reader)]
+    (assert
+      (= kw :vertices)
+      (str "Expected :vertices, got " kw))
+    {:points (doall
+               (repeatedly
+                 (count-spec reader) ; <== vertex-count
+                 #(point-spec reader)))}))

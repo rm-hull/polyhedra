@@ -10,9 +10,10 @@
   :global-vars {*warn-on-reflection* true}
   :plugins [[lein-cljsbuild "1.0.2"]]
   :dependencies [[org.clojure/clojure "1.5.1"]
+                 [org.clojure/clojurescript "0.0-2156"]
                  [rm-hull/cljs-test "0.0.7"]
                  [rm-hull/cljs-dataview "0.0.1-SNAPSHOT"]
-                 [org.clojure/clojurescript "0.0-2156"]]
+                 [rm-hull/wireframes "0.0.1-SNAPSHOT"]]
   :cljsbuild {
     :test-commands {"phantomjs" ["phantomjs" "target/unit-test.js"]}
     :builds {
@@ -20,5 +21,4 @@
              :incremental? true
              :compiler {:output-to "target/unit-test.js"
                         :optimizations :whitespace
-                        :pretty-print true }}}
-              })
+                        :pretty-print true }}}})
