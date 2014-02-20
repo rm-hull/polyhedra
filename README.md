@@ -1,10 +1,10 @@
 # Polyhedra  [![Build Status](https://secure.travis-ci.org/rm-hull/polyhedra.png)](http://travis-ci.org/rm-hull/polyhedra)
 
 A Clojure/Clojurescript library for reading netlib polyhedra data files into a
-suitable format suitable for consumption by the (wireframes)[https://github.com/rm-hull/wireframes]
+suitable format suitable for consumption by the [wireframes](https://github.com/rm-hull/wireframes)
 library.
 
-A gallery of all the tumbling 3D polyhedra can be found at (TODO)[http://programming-enchiladas.destructuring-bind.org/rm-hull/00000000].
+A gallery of all the tumbling 3D polyhedra can be found at [TODO](http://programming-enchiladas.destructuring-bind.org/rm-hull/00000000).
 
 ## References
 
