@@ -1,5 +1,6 @@
 (ns polyhedra.core
   (:require
+    [clojure.string :as str]
     [dataview.protocols :refer [read-utf8-string find!]]
     [wireframes.transform :refer [point]]))
 
@@ -8,8 +9,8 @@
 
 (defn value-spec
   "Parses a netlib value: a value consists of a floating point number
-   optionally followed by a	expression enclosed by '[]'.  The expression
-	 is the exact value represented in bc(1) code. Note that this
+   optionally followed by an expression enclosed by '[]'.  The expression
+   is the exact value represented in bc(1) code. Note that this
    implementation currently ignores the expression."
   [reader]
   (let [value (read-utf8-string reader #{\space \newline \[})
@@ -31,11 +32,13 @@
   [reader]
   (apply point (doall (repeatedly 3 #(value-spec reader)))))
 
+(defn number-list-spec
+  [reader]
+  (map js/parseInt (str/split (read-utf8-string reader #{\newline}) #" ")))
+
 (defn count-spec
   [reader]
-  (let [value (value-spec reader)]
-    ;(read-utf8-string reader #{\newline}) ; ignore 2nd value
-    value))
+  (first (number-list-spec reader)))
 
 (defn vertices-spec
   [reader]
@@ -47,3 +50,14 @@
                (repeatedly
                  (count-spec reader) ; <== vertex-count
                  #(point-spec reader)))}))
+
+(defn face-spec
+  [reader]
+  (let [[n & faces] (number-list-spec reader)]
+    (assert (= n (count faces)) "Face count does not match actual")
+    (vec faces)))
+
+(defn polygons-spec
+  [reader]
+  (let [num-faces (count-spec reader)]
+    (vec (doall (repeatedly num-faces #(hash-map :vertices (face-spec reader)))))))

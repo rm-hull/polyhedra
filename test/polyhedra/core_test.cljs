@@ -82,3 +82,52 @@
     (set-binary-data! dataview 0 vertices-data)
 
     (is-thrown? (poly/vertices-spec reader) "Correctly handled incorrect parse")))
+
+(deftest face-spec
+  (let [faces-data (str "3 8 7 12\n"
+                        "4 0 2 6 3\n"
+                        "5 3 9 12\n"   ; <-- 2 missing points
+                        "4 7 6 10 11\n")
+        dataview (create-dataview (count faces-data))
+        reader (ops/create-reader dataview)]
+    (set-binary-data! dataview 0 faces-data)
+
+    (is= (poly/face-spec reader) [8 7 12] "Three-element face")
+    (is= (poly/face-spec reader) [0 2 6 3] "Four element face")
+    (is-thrown? (poly/face-spec reader) "Mismatch face count & actual")))
+
+
+(deftest polygons-spec
+  (let [polygons-data (str
+                        "12 5\n"
+                        "5 10 16 23 24 17\n"
+                        "5 37 32 24 23 31\n"
+                        "5 25 18 17 24 30\n"
+                        "5 4 3 10 17 11\n"
+                        "5 1 9 16 10 2\n"
+                        "5 22 29 23 16 15\n"
+                        "5 15 8 14 21 22\n"
+                        "5 0 5 13 14 6\n"
+                        "5 12 19 20 13 7\n"
+                        "5 33 34 27 20 26\n"
+                        "5 36 28 21 27 35\n"
+                        "5 27 21 14 13 20\n")
+        dataview (create-dataview (count polygons-data))
+        reader (ops/create-reader dataview)]
+    (set-binary-data! dataview 0 polygons-data)
+
+    (is= (poly/polygons-spec reader)
+         [{:vertices [10 16 23 24 17]}
+          {:vertices [37 32 24 23 31]}
+          {:vertices [25 18 17 24 30]}
+          {:vertices [ 4  3 10 17 11]}
+          {:vertices [ 1  9 16 10  2]}
+          {:vertices [22 29 23 16 15]}
+          {:vertices [15  8 14 21 22]}
+          {:vertices [ 0  5 13 14  6]}
+          {:vertices [12 19 20 13  7]}
+          {:vertices [33 34 27 20 26]}
+          {:vertices [36 28 21 27 35]}
+          {:vertices [27 21 14 13 20]}]
+         "Polygons data produces expected number of faces")))
+
