@@ -1,6 +1,6 @@
 (ns polyhedra.core-test
   (:use-macros
-    [cljs-test.macros :only [deftest is= is]])
+    [cljs-test.macros :only [deftest is= is is-thrown?]])
   (:require
     [cljs-test.core :as test]
     [wireframes.transform :as wireframes]
@@ -81,9 +81,4 @@
         reader (ops/create-reader dataview)]
     (set-binary-data! dataview 0 vertices-data)
 
-  (try
-    (poly/vertices-spec reader)
-    (is false "Should've failed")
-
-    (catch js/Error e
-      (is true "Correctly handled incorrect parse")))))
+    (is-thrown? (poly/vertices-spec reader) "Correctly handled incorrect parse")))
