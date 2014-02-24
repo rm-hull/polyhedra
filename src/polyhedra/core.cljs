@@ -1,6 +1,6 @@
 (ns polyhedra.core
   (:require
-    [dataview.ops :refer [read-utf8-string]]
+    [dataview.protocols :refer [read-utf8-string find!]]
     [wireframes.transform :refer [point]]))
 
 (defn parse-float [s]

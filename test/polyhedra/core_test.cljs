@@ -5,6 +5,7 @@
     [cljs-test.core :as test]
     [wireframes.transform :as wireframes]
     [dataview.ops :as ops]
+    [dataview.protocols :as proto]
     [polyhedra.core :as poly]
     [polyhedra.test-data :as test-data]
     [polyhedra.helpers :refer [create-dataview set-binary-data!]]))
@@ -30,7 +31,7 @@
   (is= (poly/value-spec reader) 3.7 "Simple point-spec float")
   (is= (poly/value-spec reader) 0.0 "Simple point-spec composite")
   (is= (poly/value-spec reader) -0.577350269189626 "Complex point-spec composite")
-  (is= (ops/eod? reader) true "Reader should be at end")))
+  (is= (proto/eod? reader) true "Reader should be at end")))
 
 (deftest keyword-spec
   (let [keyword-data ":svertices\nnon-prefixed\nsome random String_eh?"
@@ -41,7 +42,7 @@
   (is= (poly/keyword-spec reader) :svertices "Prefixed keyword")
   (is= (poly/keyword-spec reader) :non-prefixed "non-prefixed keyword")
   ;(is= (poly/keyword-spec reader) :some-random-string-eh? "invalid chars") NYI
-  ;(is= (ops/eod? reader) true "Reader should be at end")
+  ;(is= (proto/eod? reader) true "Reader should be at end")
    ))
 
 (deftest point-spec
@@ -53,7 +54,7 @@
 
   (is= (poly/point-spec reader) (wireframes/point 3.52072594216369 -2.36602540378444 0) "First point")
   (is= (poly/point-spec reader) (wireframes/point 3.52072594216369 -1.36602540378444 0) "Second point")
-  (is= (ops/eod? reader) true "Reader should be at end")))
+  (is= (proto/eod? reader) true "Reader should be at end")))
 
 (deftest vertices-spec
   (let [vertices-data (str ":vertices\n"
@@ -70,7 +71,7 @@
                                              (wireframes/point -0.577350269189626 0 0)
                                              (wireframes/point -0.0773502691896257 -1.86602540378444 0)
                                              (wireframes/point 0.288675134594813 -0.5 0)]} "Four vertices")
-  (is= (ops/eod? reader) true "Reader should be at end")))
+  (is= (proto/eod? reader) true "Reader should be at end")))
 
 (deftest vertices-assert-check
   (let [vertices-data (str ":solid\n"
