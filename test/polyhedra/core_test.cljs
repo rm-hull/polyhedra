@@ -99,6 +99,7 @@
 
 (deftest polygons-spec
   (let [polygons-data (str
+                        ":solid\n"
                         "12 5\n"
                         "5 10 16 23 24 17\n"
                         "5 37 32 24 23 31\n"
@@ -117,17 +118,23 @@
     (set-binary-data! dataview 0 polygons-data)
 
     (is= (poly/polygons-spec reader)
-         [{:vertices [10 16 23 24 17]}
-          {:vertices [37 32 24 23 31]}
-          {:vertices [25 18 17 24 30]}
-          {:vertices [ 4  3 10 17 11]}
-          {:vertices [ 1  9 16 10  2]}
-          {:vertices [22 29 23 16 15]}
-          {:vertices [15  8 14 21 22]}
-          {:vertices [ 0  5 13 14  6]}
-          {:vertices [12 19 20 13  7]}
-          {:vertices [33 34 27 20 26]}
-          {:vertices [36 28 21 27 35]}
-          {:vertices [27 21 14 13 20]}]
+         {:polygons
+          [{:vertices [10 16 23 24 17]}
+           {:vertices [37 32 24 23 31]}
+           {:vertices [25 18 17 24 30]}
+           {:vertices [ 4  3 10 17 11]}
+           {:vertices [ 1  9 16 10  2]}
+           {:vertices [22 29 23 16 15]}
+           {:vertices [15  8 14 21 22]}
+           {:vertices [ 0  5 13 14  6]}
+           {:vertices [12 19 20 13  7]}
+           {:vertices [33 34 27 20 26]}
+           {:vertices [36 28 21 27 35]}
+           {:vertices [27 21 14 13 20]}]}
          "Polygons data produces expected number of faces")))
 
+(deftest shape-spec
+  (let [dataview (create-dataview (count test-data/gyroelongated-square-pyramid))
+        reader (ops/create-reader dataview)]
+    (set-binary-data! dataview 0 test-data/gyroelongated-square-pyramid)
+  (is= (poly/shape-spec reader) {})))

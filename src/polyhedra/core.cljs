@@ -1,7 +1,7 @@
 (ns polyhedra.core
   (:require
     [clojure.string :as str]
-    [dataview.protocols :refer [read-utf8-string find!]]
+    [dataview.protocols :refer [read-utf8-string find! rewind!]]
     [wireframes.transform :refer [point]]))
 
 (defn parse-float [s]
@@ -47,9 +47,9 @@
       (= kw :vertices)
       (str "Expected :vertices, got " kw))
     {:points (doall
-               (repeatedly
-                 (count-spec reader) ; <== vertex-count
-                 #(point-spec reader)))}))
+	       (repeatedly
+		 (count-spec reader) ; <== vertex-count
+		 #(point-spec reader)))}))
 
 (defn face-spec
   [reader]
@@ -59,5 +59,27 @@
 
 (defn polygons-spec
   [reader]
-  (let [num-faces (count-spec reader)]
-    (vec (doall (repeatedly num-faces #(hash-map :vertices (face-spec reader)))))))
+  (let [kw (keyword-spec reader)]
+  (assert
+    (= kw :solid)
+    (str "Expected :solid, got " kw))
+    (let [num-faces (count-spec reader)]
+      {:polygons (vec
+                   (doall
+                     (repeatedly
+                       num-faces
+                       #(hash-map :vertices (face-spec reader)))))})))
+
+(defn shape-spec
+  [reader]
+  (let [spec {":name" (fn [reader]
+                        {(keyword-spec reader) (str/trim (read-utf8-string reader #{\newline}))} )
+              ":solid" polygons-spec
+              ":vertices" vertices-spec}]
+    (apply merge
+      (doseq [[k f] spec
+              :when (find! reader k)
+              :let  [v (f reader)]]
+        (rewind! reader)
+        (println "--->" k " produces " v)
+        v))))
