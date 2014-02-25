@@ -78,9 +78,10 @@
               ":solid" polygons-spec
               ":vertices" vertices-spec}]
     (apply merge
-      (doseq [[k f] spec
-              :when (find! reader k)
-              :let  [v (f reader)]]
-        (rewind! reader)
-        (println "--->" k " produces " v)
-        v))))
+      (doall
+        (for [[k f] spec
+                :when (find! reader k)
+                :let  [v (f reader)]]
+          (rewind! reader)
+          (println "--->" k " produces " v)
+          v)))))
