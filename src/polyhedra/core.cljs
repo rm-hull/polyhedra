@@ -82,6 +82,6 @@
         (for [[k f] spec
                 :when (find! reader k)
                 :let  [v (f reader)]]
-          (rewind! reader)
-          (println "--->" k " produces " v)
-          v)))))
+          (do
+            (rewind! reader)
+            v))))))
