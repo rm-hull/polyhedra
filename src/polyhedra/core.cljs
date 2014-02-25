@@ -46,10 +46,11 @@
     (assert
       (= kw :vertices)
       (str "Expected :vertices, got " kw))
-    {:points (doall
-	       (repeatedly
-		 (count-spec reader) ; <== vertex-count
-		 #(point-spec reader)))}))
+    {:points (vec
+               (doall
+                 (repeatedly
+                   (count-spec reader) ; <== vertex-count
+                   #(point-spec reader))))}))
 
 (defn face-spec
   [reader]
