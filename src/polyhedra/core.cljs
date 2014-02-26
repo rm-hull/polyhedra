@@ -28,6 +28,14 @@
     (keyword
       (subs value offset (dec (count value))))))
 
+(defn keyvalue-spec
+  [reader kword]
+  (let [kw (keyword-spec reader)]
+    (assert
+      (= kw kword)
+      (str "Expected " kword ", got " kw))
+   { kw (str/trim (read-utf8-string reader #{\newline}))}))
+
 (defn point-spec
   [reader]
   (apply point (doall (repeatedly 3 #(value-spec reader)))))
@@ -71,10 +79,11 @@
                        num-faces
                        #(hash-map :vertices (face-spec reader)))))})))
 
+
 (defn shape-spec
   [reader]
-  (let [spec {":name" (fn [reader]
-                        {(keyword-spec reader) (str/trim (read-utf8-string reader #{\newline}))} )
+  (let [spec {":name" #(keyvalue-spec % :name)
+              ":number" #(keyvalue-spec % :number)
               ":solid" polygons-spec
               ":vertices" vertices-spec}]
     (apply merge

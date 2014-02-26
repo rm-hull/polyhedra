@@ -139,6 +139,7 @@
     (set-binary-data! dataview 0 test-data/gyroelongated-square-pyramid)
   (is= (poly/shape-spec reader)
         {:name "gyroelongated square pyramid (J10)",
+         :number "54",
          :polygons
            [{:vertices [20 23 24]}
             {:vertices [24 23 22]}
