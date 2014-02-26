@@ -1,0 +1,142 @@
+tetrahedron
+cube
+octahedron
+dodecahedron
+icosahedron
+small stellated dodecahedron
+great dodecahedron
+great stellated dodecahedron
+great icosahedron
+truncated tetrahedron
+cuboctahedron
+truncated cube
+truncated octahedron
+rhombicuboctahedron
+great rhombicuboctahedron
+snub cube (laevo)
+icosidodecahedron
+truncated dodecahedron
+truncated icosahedron
+rhombicosidodecahedron
+great rhombicosidodecahedron
+snub dodecahedron (laevo)
+triangular prism
+pentagonal prism
+hexagonal prism
+octagonal prism
+decagonal prism
+square antiprism
+pentagonal antiprism
+hexagonal antiprism
+octagonal antiprism
+decagonal antiprism
+triakis tetrahedron
+rhombic dodecahedron
+triakis octahedron
+tetrakis hexahedron
+trapezoidal icositetrahedron
+hexakis octahedron
+pentagonal icositetrahedron (dextro)
+rhombic triacontahedron
+triakis icosahedron
+pentakis dodecahedron
+trapezoidal hexecontahedron
+hexakis icosahedron
+pentagonal hexecontahedron (dextro)
+square pyramid (J1)
+pentagonal pyramid (J2)
+triangular cupola (J3)
+square cupola (J4)
+pentagonal cupola (J5)
+pentagonal rotunda (J6)
+elongated triangular pyramid (J7)
+elongated square pyramid (J8)
+elongated pentagonal pyramid (J9)
+gyroelongated square pyramid (J10)
+gyroelongated pentagonal pyramid (J11)
+triangular dipyramid (J12)
+pentagonal dipyramid (J13)
+elongated triangular dipyramid (J14)
+elongated square dipyramid (J15)
+elongated pentagonal dipyramid (J16)
+gyroelongated square dipyramid (J17)
+elongated triangular cupola (J18)
+elongated square cupola (J19)
+elongated pentagonal cupola (J20)
+elongated pentagonal rotunds (J21)
+gyroelongated triangular cupola (J22)
+gyroelongated square cupola (J23)
+gyroelongated pentagonal cupola (J24)
+gyroelongated pentagonal rotunda (J25)
+gyrobifastigium (J26)
+triangular orthobicupola (J27)
+square orthobicupola (J28)
+square gyrobicupola (J29)
+pentagonal orthobicupola (J30)
+pentagonal gyrobicupola (J31)
+pentagonal orthocupolarontunda (J32)
+pentagonal gyrocupolarotunda (J33)
+pentagonal orthobirotunda (J34)
+elongated triangular orthobicupola (J35)
+elongated triangular gyrobicupola (J36)
+elongated square gyrobicupola (J37)
+elongated pentagonal orthobicupola (J38)
+elongated pentagonal gyrobicupola (J39)
+elongated pentagonal orthocupolarotunda (J40)
+elongated pentagonal gyrocupolarotunda (J41)
+elongated pentagonal orthobirotunda (J42)
+elongated pentagonal gyrobirotunda (J43)
+gyroelongated triangular bicupola (J44)
+gyroelongated square bicupola (J45)
+gyroelongated pentagonal bicupola (J46)
+gyroelongated pentagonal cupolarotunda (J47)
+gyroelongated pentagonal birotunda (J48)
+augmented triangular prism (J49)
+biaugmented triangular prism (J50)
+triaugmented triangular prism (J51)
+augmented pentagonal prism (J52)
+biaugmented pentagonal prism (J53)
+augmented hexagonal prism (J54)
+parabiaugmented hexagonal prism (J55)
+metabiaugmented hexagonal prism (J56)
+triaugmented hexagonal prism (J57)
+augmented dodecahedron (J58)
+parabiaugmented dodecahedron (J59)
+metabiaugmented dodecahedron (J60)
+triaugmented dodecahedron (J61)
+metabidiminished icosahedron (J62)
+tridiminished icosahedron (J63)
+augmented tridiminished icosahedron (J64)
+augmented truncated tetrahedron (J65)
+augmented truncated cube (J66)
+biaugmented truncated cube (J67)
+augmented truncated dodecahedron (J68)
+parabiaugmented truncated dodecahedron (J69)
+metabiaugmented truncated dodecahedron (J70)
+triaugmented truncated dodecahedron (J71)
+gyrate rhombicosidodecahedron (J72)
+parabigyrate rhombicosidodecahedron (J73)
+metabigyrate rhombicosidodecahedron (J74)
+trigyrate rhombicosidodecahedron (J75)
+diminished rhombicosidodecahedron (J76)
+paragyrate diminished rhombicosidodecahedron (J77)
+metagyrate diminished rhombicosidodecahedron (J78)
+bigyrate diminished rhombicosidodecahedron (J79)
+parabidiminished rhombicosidodecahedron (J80)
+metabidiminished rhombicosidodecahedron (J81)
+gyrate bidiminished rhombicosidodecahedron (J82)
+tridiminished rhombicosidodecahedron (J83)
+snub disphenoid (J84)
+snub square antiprism (J85)
+sphenocorona (J86)
+augmented sphenocorona (J87)
+sphenomegacorona (J88)
+hebesphenomegacorona (J89)
+disphenocingulum (J90)
+bilunabirotunda (J91)
+triangular hebesphenorotunda (J92)
+tetrahemihexahedron
+octahemioctahedron
+small ditrigonal icosidodecahedron
+dodecadodecahedron
+echidnahedron
