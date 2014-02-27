@@ -1,4 +1,5 @@
 (ns polyhedra.examples.demo
+  (:refer-clojure :exclude [identity])
   (:require-macros
     [cljs.core.async.macros :refer [go]]
     [dommy.macros :refer [sel1 node]])
@@ -9,13 +10,13 @@
     ;[enchilada :refer [ctx canvas canvas-size]]
     [wireframes.renderer.canvas :refer [draw-solid ->canvas]]
     [wireframes.renderer.color :refer [wireframe solid]]
-    [wireframes.transform :refer [combine rotate scale translate degrees->radians]]
+    [wireframes.transform :refer [combine rotate scale translate identity degrees->radians]]
     [wireframes.shapes.primitives :refer [transform-shape center-at-origin]]
     [big-bang.core :refer [big-bang]]
+    [big-bang.components :refer [dropdown slider color-picker]]
     [dataview.loader :refer [fetch-blob fetch-text]]
     [dataview.ops :refer [create-reader]]
-    [polyhedra.core :refer [shape-spec]]
-    [polyhedra.examples.dropdown :refer [make-dropdown]]))
+    [polyhedra.core :refer [shape-spec]]))
 
 
 (enable-console-print!)
@@ -70,8 +71,9 @@
 
 (def transform
   (memoize
-    (fn [x y z depth]
+    (fn [x y z depth offset?]
       (combine
+        (if offset? (translate 1.17 2.28 0) identity)
         (rotate :x (degrees->radians x))
         (rotate :y (degrees->radians y))
         (rotate :z (degrees->radians z))
@@ -85,13 +87,14 @@
    :focal-length 3
    :style (first styles)
    :color color
+   :offset? false
    :x 0
    :y 0
    :z 0 })
 
 (defn render-shape
   "Draws the shape at the given state of the world (the x,y,z rotation angles)"
-  [{:keys [shape style color focal-length depth x y z]}]
+  [{:keys [shape style color focal-length depth offset? x y z]}]
   (when shape
 
     (set! (.-fillStyle ctx) "rgba(255,255,255,0.75")
@@ -103,7 +106,7 @@
          :focal-length focal-length
          :color-fn (color-fn style color)
          :shape shape
-         :transform (transform x y z depth)})
+         :transform (transform x y z depth offset?)})
       [width height])))
 
 (defn update-state
@@ -120,9 +123,7 @@
   (merge world-state event))
 
 (defn start []
-  (let [updates-chan (chan 1)
-
-        ]
+  (let [updates-chan (chan 1)]
     (go
       (let [catalog-url (proxy-request (str url-prefix "names.txt"))
             names (vec (split-lines (<! (fetch-text catalog-url))))]
@@ -130,19 +131,40 @@
           (sel1 :#canvas-area)
           (insert-after! (node
                            [:div
-                             (make-dropdown
-                               :id :polyhedra
-                               :label-text "Polyhedra:"
-                               :initial-value (rand-int (count names))
-                               :options (zipmap (iterate inc 0) names)
-                               :send-channel (shapes> updates-chan))
-                             (make-dropdown
-                               :id :style
-                               :label-text "Style:"
-                               :initial-value (second styles)
-                               :options (zipmap styles styles)
-                               :send-channel (to-keyword> updates-chan))
-                            ])))))
+                             [:div
+                               (dropdown
+                                 :id :polyhedra
+                                 :label-text "Polyhedra:"
+                                 :initial-value (rand-int (count names))
+                                 :options (zipmap (iterate inc 0) names)
+                                 :send-channel (shapes> updates-chan))
+                               (dropdown
+                                 :id :style
+                                 :label-text "Style:"
+                                 :initial-value (second styles)
+                                 :options (zipmap styles styles)
+                                 :send-channel (to-keyword> updates-chan))
+                               (color-picker
+                                 :id :color
+                                 :label-text "Color:"
+                                 :initial-value "#EAF5FC"
+                                 :send-channel updates-chan)]
+                             [:div
+                               (slider
+                                 :id :focal-length
+                                 :label-text "Focal Length:"
+                                 :initial-value 3
+                                 :min-value 1
+                                 :max-value 25
+                                 :send-channel updates-chan)
+                               (slider
+                                 :id :depth
+                                 :label-text "Z-Depth:"
+                                 :initial-value 16
+                                 :min-value 10
+                                 :max-value 50
+                                 :send-channel updates-chan)
+                               ]])))))
 
     (big-bang
       :initial-state initial-state
