@@ -11,17 +11,29 @@
   :plugins [[lein-cljsbuild "1.0.2"]]
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [org.clojure/clojurescript "0.0-2173"]
+                 [rm-hull/dommy "0.1.3-SNAPSHOT"]
                  [rm-hull/cljs-test "0.0.7"]
+                 [rm-hull/big-bang "0.0.1-SNAPSHOT"]
                  [rm-hull/cljs-dataview "0.0.1-SNAPSHOT"]
                  [rm-hull/wireframes "0.0.1-SNAPSHOT"]]
   :cljsbuild {
     :test-commands {"phantomjs" ["phantomjs" "target/unit-test.js"]}
     :builds {
-      :test {:source-paths ["src" "test"]
-             :incremental? true
-             :compiler {
-               :output-to "target/unit-test.js"
-               :source-map "target/unit-test.map"
-               :static-fns true
-               :optimizations :whitespace
-               :pretty-print true }}}})
+      :test {
+        :source-paths ["src" "test"]
+        :incremental? true
+        :compiler {
+          :output-to "target/unit-test.js"
+          :source-map "target/unit-test.map"
+          :static-fns true
+          :optimizations :whitespace
+          :pretty-print true }}
+      :examples {
+        :source-paths ["src" "examples"]
+        :incremental? true
+        :compiler {
+          :output-to "target/example.js"
+          :source-map "target/example.map"
+          :static-fns true
+          ;:optimizations :advanced
+          :pretty-print true }}}})
