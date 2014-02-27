@@ -1,4 +1,4 @@
-(defproject rm-hull/cljs-dataview "0.0.1-SNAPSHOT"
+(defproject rm-hull/polyhedra "0.0.1-SNAPSHOT"
   :clojurescript? true
   :description "A Clojure/Clojurescript library for reading netlib polyhedra data files"
   :source-paths ["src"]
