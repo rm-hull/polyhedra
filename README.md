@@ -4,7 +4,7 @@ A Clojure/Clojurescript library for reading netlib polyhedra data files into a
 suitable format suitable for consumption by the [wireframes](https://github.com/rm-hull/wireframes)
 library.
 
-A gallery of all the tumbling 3D polyhedra can be found at [TODO](http://programming-enchiladas.destructuring-bind.org/rm-hull/00000000).
+A gallery of all the tumbling 3D polyhedra can be found at [3D Polyhedra Taxonomy](http://programming-enchiladas.destructuring-bind.org/rm-hull/9261323).
 
 ## References
 
