@@ -83,7 +83,7 @@
 (def styles (map name [:transparent :translucent :opaque :shaded]))
 
 (def initial-state
-  {:depth 16
+  {:depth 10
    :focal-length 3
    :style (first styles)
    :color color
@@ -118,9 +118,16 @@
     (assoc :y (- y 0.7))
     (assoc :z (+ z 0.5))))
 
+
+(defn not-well-formed? [shape]
+  (nil? (:polygons shape)))
+
 (defn handle-incoming-msg [event world-state]
-  (println "handle-incoming-msg: " event)
+  (when (and (:shape event) (not-well-formed? (:shape event)))
+      (js/alert "Shape is not a well-formed 3D solid: please try another."))
+
   (merge world-state event))
+
 
 (defn start []
   (let [updates-chan (chan 1)]
@@ -160,8 +167,8 @@
                                (slider
                                  :id :depth
                                  :label-text "Z-Depth:"
-                                 :initial-value 16
-                                 :min-value 10
+                                 :initial-value 12
+                                 :min-value 0
                                  :max-value 50
                                  :send-channel updates-chan)
                                ]])))))
