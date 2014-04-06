@@ -8,11 +8,11 @@
   :scm {:url "git@github.com:rm-hull/polyhedra"}
   :min-lein-version "2.3.4"
   :global-vars {*warn-on-reflection* true}
-  :plugins [[lein-cljsbuild "1.0.2"]]
-  :dependencies [[org.clojure/clojure "1.5.1"]
-                 [org.clojure/clojurescript "0.0-2173"]
+  :plugins [[lein-cljsbuild "1.0.3"]]
+  :dependencies [[org.clojure/clojure "1.6.0"]
+                 [org.clojure/clojurescript "0.0-2202"]
                  [rm-hull/dommy "0.1.3-SNAPSHOT"]
-                 [rm-hull/cljs-test "0.0.7"]
+                 [rm-hull/cljs-test "0.0.8-SNAPSHOT"]
                  [rm-hull/big-bang "0.0.1-SNAPSHOT"]
                  [rm-hull/cljs-dataview "0.0.1-SNAPSHOT"]
                  [rm-hull/wireframes "0.0.1-SNAPSHOT"]]
